@@ -8,8 +8,73 @@
         <title>
             Shivank Kacker
         </title>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="inc/components.js"></script>
+        
+        <link rel="stylesheet" href="css/common.css">
+
     </head>
     <body>
-                
+        <div component compRes = "lay/landing.html"></div>
     </body>
 </html>
+
+<script>
+     const flexes = {
+        strings : [
+            "Its Kacker,",
+            "Brace yourselves for",
+            "Brought to you by",
+            "Presented by",
+            "Some stuff by",
+            "Let me introduce you to",
+            "Hey! I am",
+            "They know me as",
+            "Beware of",
+            "Perhaphs you want to know about",
+            "Menace to society. Yes I am talking about",
+            "Ladies and Gentlemen, here comes"
+        ],
+        getRandom : () => {
+            let random = Math.floor((Math.random() * flexes.strings.length));
+            flexes.changeDisplay(random);
+        },
+        changeDisplay : (str) => {
+            let spaner = document.querySelectorAll('[lsid]');
+            if(spaner.length > 0){
+                spaner.forEach(element => {
+                    element.classList.add("l-sub-hide");
+                });
+            }
+
+            spaner = document.querySelectorAll('[lsid="'+str+'"]');
+            if(spaner.length > 0){
+                spaner.forEach(element => {
+                    element.classList.remove("l-sub-hide");
+                });
+            }
+            
+           
+        },
+        init : (time) => {
+            flexes.display();
+            flexes.getRandom();
+            setInterval(() => {
+                flexes.getRandom();
+            }, time);
+        },
+        display : () => {
+            flexes.strings.forEach((s,i) => {
+                document.getElementsByClassName('l-sub')[0].innerHTML += `<div class="l-sub-span l-sub-hide" lsid = "${i}">${s}</div>`;
+            });
+        }
+    }
+    window.addEventListener("load", () => {
+        componentLoader.load(()=>{
+            console.log('All Components Loaded');
+            flexes.init(2000);
+        });
+    });    
+</script>

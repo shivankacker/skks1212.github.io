@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;900&display=swap');
+
+@font-face {
+    font-family: heavyf;
+    src: url('../med/UniSansDemo-HeavyCAPS.otf');
+}
+@font-face {
+    font-family: thinf;
+    src: url('../med/UniSansDemo-ThinCAPS.otf');
+}
+
+@font-face {
+    font-family: gilroyb;
+    src: url('../med/bold.otf');
+}
+@font-face {
+    font-family: gilroyl;
+    src: url('../med/light.otf');
+}
+
+:root{
+    --primary : black;
+    --primary-font : white;
+    --secondary-opp : #c2c2c2;
+    --secondary : #1b1b1b;
+    --secondary-active : #272727;
+    --font : 'gilroyl';
+    --font-bold : 'heavyf';
+    --accent : #44df44;
+    --accent-active: #117911;
+}
+
+html, body{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    font-family: var(--font);
+    background:url('../med/blurred.png'),linear-gradient(to bottom right, var(--primary), var(--secondary)); /* Inspired by tailwind's home page. Ironic. */
+    background-position: center;
+    background-size: cover;
+    color: var(--primary-font);
+}
+
+.landing{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.l-tit{
+    font-size: 150px;
+    font-family: var(--font-bold);
+    font-weight: 900;
+    line-height: 130px;
+    background: linear-gradient(to bottom right, var(--accent), var(--accent-active));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+}
+
+.l-sub{
+    font-size: 30px;
+    margin-bottom: 10px;
+    
+    display: flex;
+    flex-direction: column;
+    height: 37px;
+    overflow: hidden;
+    position: relative;
+}
+
+.l-sub-span{
+    transition: 0.2s;
+    position: absolute;
+    bottom: 0px;
+}
+
+.l-sub-hide{
+    bottom: -40px;
+    animation: hide 0.4s;
+}
+@keyframes hide {
+    0%{
+        bottom: 0px;
+    }100%{
+        bottom: 40px;
+    }
+}
+
+@keyframes landShow{
+    0%{
+
+    }
+}
+.l-butts{
+    margin-top: 10px;
+}
+.l-butt{
+    font-size: 20px;
+    border: 3px solid var(--accent);
+    text-decoration: none;
+    color: var(--accent);
+    padding: 15px 30px;
+    border-radius: 10px;
+    display: inline-block;
+    transition: 0.2s;
+    overflow: hidden;
+    position: relative;
+    font-family: var(--font-bold);
+}
+.l-butt::after{
+    background: var(--accent);
+    position: absolute;
+    top: calc(50% - 150px);
+    left: calc(50% - 150px);
+    transform: scale(0);
+    height: 300px;
+    width: 300px;
+    z-index: -1;
+    content: '';
+    transition: 0.2s;
+    border-radius: 50%;
+}
+.l-butt:hover::after{
+    transform: scale(1);
+}
+.l-butt:hover{
+    color: var(--primary);
+}
+.p-cont{
+    position: absolute;
+    bottom: 50px;
+    left: 0px;
+    right: 0px;
+    color: grey;
+    text-align: center;
+}
+.p-butt{
+    color: var(--accent);
+    text-decoration: none;
+}
