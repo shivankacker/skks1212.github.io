@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Projects by Shivank Kacker
+        </title>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="inc/components.js"></script>
+        
+        <link rel="stylesheet" href="css/common.css">
+
+    </head>
+    <body class="okboomer">
+        <div component compRes = "lay/header.html"></div>
+        <div class="dummy" style="display: none;"></div>
+        <div class="p-block-wrap">
+            <a class="pb-block" href="fight">
+                <div class="pb-img" style="background:url('https://cdn.discordapp.com/attachments/656529142166323202/933116717314474054/download.png');background-position:center;background-size:cover;">
+                </div>
+                <div class="pb-info">
+                    <div class="pb-title">
+                        Martial Arts Simulator
+                    </div>
+                    <div class="pb-cont">
+                        Fun little project involving martial arts.
+                    </div>
+                </div>
+            </a>
+        </div>
+    </body>
+</html>
+
+<script>
+    window.addEventListener("load", () => {
+        componentLoader.load(()=>{
+            console.log('All Components Loaded');
+            fetch("https://shivank.writeroo.in")
+            .then(response => response.text())
+            .then(data => displayPortFolio(data));
+        });
+        
+    });    
+    let displayPortFolio = (data) => {
+        let dummy = document.getElementsByClassName('dummy')[0];
+        dummy.innerHTML = data;
+        let Bs = dummy.querySelectorAll('.s-ach-box');
+        Bs.forEach(element => {
+            let href = element.getAttribute('href');
+            let title = element.getElementsByClassName('s-ach-box-title')[0].innerText.trim();
+            let desc = element.getElementsByClassName('s-ach-box-desc')[0].innerText.trim();
+            let bg = element.querySelector('.s-ach-box-background-bg');
+            const style = window.getComputedStyle(bg, false);
+            const bgurl = "https://shivank.writeroo.in/med/"+style.backgroundImage.slice(4, -1).replace(/"/g, "").split('med/')[1];
+            
+            let newEle = `
+                <a class="pb-block" href="${href}">
+                    <div class="pb-img" style="background:url('${bgurl}');background-position:center;background-size:cover;">
+                    </div>
+                    <div class="pb-info">
+                        <div class="pb-title">
+                            ${title}
+                        </div>
+                        <div class="pb-cont">
+                            ${desc}
+                        </div>
+                    </div>
+                </a>
+            `;
+
+            document.getElementsByClassName('p-block-wrap')[0].innerHTML += newEle;
+        });
+    }
+</script>

@@ -36,9 +36,6 @@ html, body{
 }
 body{
     font-family: var(--font);
-    background:url('../med/blurred.png'),linear-gradient(to bottom right, var(--primary), var(--secondary)); /* Inspired by tailwind's home page. Ironic. */
-    background-position: center;
-    background-size: cover;
     color: var(--primary-font);
 }
 
@@ -47,6 +44,19 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+}
+.landing::before{
+    content: '';
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: -2;
+    background:url('../med/blurred.png'),linear-gradient(to bottom right, var(--primary), var(--secondary)); /* Inspired by tailwind's home page. Ironic. */
+    background-position: center;
+    background-size: cover;
 }
 
 .l-tit{
@@ -185,4 +195,71 @@ body{
         height: calc(100vh - 40px);
         text-align: center;
     }
+}
+.header{
+    padding: 50px;
+    text-align: center;
+}
+.h-tit{
+    font-size: 50px;
+    font-family: var(--font-bold);
+    font-weight: 900;
+    background: linear-gradient(to bottom right, var(--accent), var(--accent-active));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.okboomer{
+    background:url('../med/blurred.png'),linear-gradient(to bottom right, var(--primary), var(--secondary)); /* Inspired by tailwind's home page. Ironic. */
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+.p-block-wrap{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.pb-block{
+    display: inline-block;
+    border: 2px solid var(--accent);
+    border-radius: 10px;
+    width: 300px;
+    overflow: hidden;
+    margin: 20px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s;
+    color: inherit;
+    text-decoration: none;
+}
+.pb-block::after{
+    background: var(--accent);
+    position: absolute;
+    top: calc(50% - 200px);
+    left: calc(50% - 200px);
+    transform: scale(0);
+    height: 400px;
+    width: 400px;
+    z-index: -1;
+    content: '';
+    transition: 0.2s;
+    border-radius: 50%;
+}
+.pb-block:hover::after{
+    transform: scale(1);
+}
+.pb-block:hover{
+    color: var(--primary);
+}
+.pb-img{
+    height: 100px;
+    width: 100%;
+}
+.pb-info{
+    padding: 20px;
+}
+.pb-title{
+    font-family: var(--font-bold);
+    font-size: 20px;
 }
