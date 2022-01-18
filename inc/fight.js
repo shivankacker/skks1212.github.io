@@ -90,17 +90,17 @@ let animate = (animation, callback) => {
     }
     
     ctx.drawImage(BGIMG, 0, 0, 800, 500);
-    ctx.drawImage(loaded[1], pposition, 0, 500, 500);
+    ctx.drawImage(loaded[1], pposition, 150, 350, 350);
     let i = 2;
     queue.pop();
     var intervalID = setInterval(() => {
         if(i < loaded.length){
             ctx.drawImage(BGIMG, 0, 0, 800, 500);
-            ctx.drawImage(loaded[i], pposition, 0, 500, 500);
+            ctx.drawImage(loaded[i], pposition, 150, 350, 350);
             i++;
             if(animation == 'backward' && pposition > 19){
                 pposition -= 20;
-            }else if(animation == 'forward' && pposition < 281){
+            }else if(animation == 'forward' && pposition < 431){
                 pposition += 20;
             }
         }else{
@@ -123,7 +123,7 @@ let processQueue = () => {
 const keys = {
     d : () => queue.push('forward'),
     a : () => queue.push('backward'),
-    f : () => queue.push('block'),
+    s : () => queue.push('block'),
     q : () => queue.push('kick'),
     e : () => queue.push('punch')
 }
@@ -131,7 +131,7 @@ document.addEventListener('keydown', (e)=>{
     let pressed = e.key;
     
     if(typeof keys[pressed] != "undefined"){
-        console.log(':'+pressed+":");
+        //console.log(':'+pressed+":");
         keys[pressed]();
     }
     
