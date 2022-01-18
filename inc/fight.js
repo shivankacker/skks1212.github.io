@@ -54,12 +54,8 @@ let loadAll = () => {
         let imgPath = animations.imgPath;
         for(i=1;  i < animages; i++){
             let thisImg = `${imgPath + aniPath}/${i}.png`;
-            //console.log(thisImg);
             loadImage(thisImg, (img, ind) => {
                 animations.anims[a].loaded[ind] = img;
-                
-                //console.log( img);
-                //ctx.drawImage(img, 0, 0, 500, 500);
             }, i);
         }
         
@@ -75,12 +71,6 @@ loadImage(imgPath+bg, (img) => {
 });
 
 let animate = (animation, callback) => {
-
-    let bg = animations.bg;
-    let imgPath = animations.imgPath;
-    
-    let animages = animations.anims[animation].images;
-    let aniPath = animations.anims[animation].path;
     let loaded = animations.anims[animation].loaded;
     ctx.drawImage(BGIMG, 0, 0, 800, 500);
     ctx.drawImage(loaded[1], 0, 0, 500, 500);
@@ -88,13 +78,10 @@ let animate = (animation, callback) => {
     queue.pop();
     var intervalID = setInterval(() => {
         if(i < loaded.length){
-            //console.log(loaded[i]);
             ctx.drawImage(BGIMG, 0, 0, 800, 500);
             ctx.drawImage(loaded[i], 0, 0, 500, 500);
             i++;
         }else{
-            //console.log(queue);
-            
             window.clearInterval(intervalID);
             callback();
         }
