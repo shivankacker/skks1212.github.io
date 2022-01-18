@@ -8,7 +8,7 @@ It takes a lot to move away from jQuery.
 */
 
 const componentLoader = {
-    get : (res, callback) => { //Fetches a resourse and sends data in promise
+    get : (res, callback) => { //Fetches a resource and sends data in promise
         fetch(res)
         .then(response => response.text())
         .then(data => callback(data));

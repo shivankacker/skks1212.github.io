@@ -141,3 +141,48 @@ body{
     color: var(--accent);
     text-decoration: none;
 }
+
+@media screen and (max-width:950px){
+    .l-tit{
+        font-size: 100px;
+        line-height: 90px;
+        
+    }
+    
+    .l-sub{
+        font-size: 20px;
+    }
+    .l-butt{
+        font-size: 15px;
+    }
+}
+@media screen and (max-width:850px){
+    .l-tit{
+        font-size: 70px;
+        line-height: 60px;
+    }
+    
+    .l-sub{
+        font-size: 15px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+    .l-butts{
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .l-butt{
+        font-size: 15px;
+        text-align: center;
+        padding: 10px 20px;
+    }
+    .landing{
+        margin: 20px;
+        height: calc(100vh - 40px);
+        text-align: center;
+    }
+}
