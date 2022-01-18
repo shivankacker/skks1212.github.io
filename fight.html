@@ -11,23 +11,28 @@
             <h1>
                 Martial Arts Simulator
             </h1>
+            <button onclick="setLock ? undefined : processQueue()">
+                Play
+            </button>
+            <br>
+            <br>
             <canvas id="fight-canvas" height="500px" width="800px" style="border: 1px solid grey;"></canvas>
             <br>
             <br>
             <button onclick="queue.push('backward')">
-                Backward (s)
+                Backward (a)
             </button>
             <button onclick="queue.push('forward')">
-                Forward (w)
+                Forward (d)
             </button>
             <button onclick="queue.push('block')">
-                Block (b)
+                Block (f)
             </button>
             <button onclick="queue.push('kick')">
-                Kick (k)
+                Kick (q)
             </button>
             <button onclick="queue.push('punch')">
-                Punch (p)
+                Punch (e)
             </button>
         </center>
     </body>
