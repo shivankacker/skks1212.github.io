@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Martial Arts Simulator
+        </title>
+    </head>
+    
+    <body>
+        <center>
+            <h1>
+                Martial Arts Simulator
+            </h1>
+            <canvas id="fight-canvas" height="500px" width="800px" style="border: 1px solid grey;"></canvas>
+            <br>
+            <br>
+            <button onclick="queue.push('backward')">
+                Backward (s)
+            </button>
+            <button onclick="queue.push('forward')">
+                Forward (w)
+            </button>
+            <button onclick="queue.push('block')">
+                Block (b)
+            </button>
+            <button onclick="queue.push('kick')">
+                Kick (k)
+            </button>
+            <button onclick="queue.push('punch')">
+                Punch (p)
+            </button>
+        </center>
+    </body>
+    <script src="inc/fight.js"></script>
+</html>
+
