@@ -10,7 +10,7 @@ let loadImage = (src, callback, ind) => {
 const animations = {
     bg : "background.jpg",
     imgPath : "med/fight/",
-    frameRate : 9,
+    frameRate : 10,
 
     anims : {
         idle : {
