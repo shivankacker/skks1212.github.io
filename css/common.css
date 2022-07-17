@@ -65,6 +65,7 @@ body{
     font-weight: 900;
     line-height: 130px;
     background: linear-gradient(to bottom right, var(--accent), var(--accent-active));
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     
@@ -205,6 +206,7 @@ body{
     font-family: var(--font-bold);
     font-weight: 900;
     background: linear-gradient(to bottom right, var(--accent), var(--accent-active));
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }

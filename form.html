@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>
+            Survey Form
+        </title>
+    </head>
+    
+    <body>
+        <div class="flex justify-center items-center h-screen">
+            <div class="flex gap-5">
+                <div class="w-[350px]">
+                    <h1 class="text-3xl font-bold">
+                        Register
+                    </h1>
+                    <br>
+                    <form class="flex flex-col gap-5" id="user_form">
+                        <label for="name">
+                            Name
+                            <input 
+                                type="text" 
+                                name="name" 
+                                id="name" 
+                                class="font-bold text-xl block bg-gray-200 rounded-lg px-4 py-2 w-full focus:bg-gray-300 transition"
+                                required
+                            />
+                        </label>
+                        <label for="email">
+                            Email
+                            <input 
+                                type="email" 
+                                name="email" 
+                                id="email" 
+                                class="font-bold text-xl block bg-gray-200 rounded-lg px-4 py-2 w-full focus:bg-gray-300 transition"
+                                required
+                            />
+                        </label>
+                        <label for="password">
+                            Password
+                            <input 
+                                type="password" 
+                                name="password" 
+                                id="password" 
+                                class="font-bold text-xl block bg-gray-200 rounded-lg px-4 py-2 w-full focus:bg-gray-300 transition"
+                                required
+                            />
+                        </label>
+                        <label for="dob">
+                            Date of Birth
+                            <input 
+                                type="date" 
+                                name="dob" 
+                                id="dob"
+                                class="font-bold text-xl block bg-gray-200 rounded-lg px-4 py-2 w-full focus:bg-gray-300 transition"
+                                required
+                            />
+                        </label>
+                        <label for="tnc">
+                            <input type="checkbox" required name="tnc" id="tnc"> I accept the <a href="https://bit.ly/3uY7NDN" class="text-blue-500" target="_blank">terms and conditions</a>
+                        </label>
+                        <input 
+                            type="submit" 
+                            value="Count me in!"
+                            class="text-white block bg-blue-500 rounded-lg px-4 py-2 w-full hover:bg-blue-600 transition cursor-pointer"
+                        >
+                    </form>
+                </div>
+                <div class="max-h-[500px] overflow-auto">
+                    <h1 class="text-2xl font-bold">
+                        Responses
+                    </h1>
+                    <div id="responses">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="inc/form.js"></script>
+</html>
+
