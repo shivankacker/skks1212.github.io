@@ -16,7 +16,7 @@ const saveUserForm = (event) => {
 
     let userEntries = JSON.parse(localStorage.getItem("user-entries")) || [];
     userEntries.push(userDetails);
-    
+    document.getElementById("user_form").reset();
     localStorage.setItem("user-entries", JSON.stringify(userEntries));
     printResponses();
    
